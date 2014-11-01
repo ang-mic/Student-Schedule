@@ -1,0 +1,27 @@
+<aside class="left-off-canvas-menu">
+  <!-- off-canvas content -->
+  <ul class="off-canvas-list">
+    <% if student_signed_in? %>
+    <!-- If user is loged in -->
+    <li>
+      <label class="off-canvas-lable">
+        <%= image_tag(current_student.profile_picture.url(:small),class: "profile-picture-rounded") %><br>
+        <%= current_student.full_name %>
+      </label>
+    </li>
+
+    <li id="off-canvas-link"><%= link_to "#{image_tag("home.png", :alt => "home")} Home".html_safe, user_events_path %></li>
+
+    <li id="off-canvas-link"><%= link_to "#{image_tag("timetable.png", :alt => "timetables")} Timetables".html_safe, timetables_path %></li>
+
+    <li id="off-canvas-link"><%= link_to "#{image_tag("edit.png", :alt => "edit")} Edit account".html_safe, edit_student_registration_path %></li>
+    <li id="off-canvas-logout">
+      <%= link_to "#{image_tag("logout.png", :alt => "logout")} Logout".html_safe, destroy_student_session_path, method: :delete  %>
+    </li>
+    <% else %>
+    <!-- If none user is loged in -->
+    <!-- <%= link_to "Sign up", new_admin_registration_path %> | -->
+    <li><%= link_to "Login", new_student_session_path  %></li>
+    <% end %>
+  </ul>
+</aside>

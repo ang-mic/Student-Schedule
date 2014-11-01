@@ -1,0 +1,66 @@
+<section id="form" class="small-8 small-centered columns">
+
+<fieldset>
+  <legend><h3><%= @course.title %></h3></legend>
+
+  <ul>
+    <li>
+        <strong>Short title:</strong>
+        <%= @course.short_title %>
+    </li>
+    <li>
+        <strong>Code:</strong>
+        <%= @course.code %>
+    </li>
+    <li>
+        <strong>Number of levels:</strong>
+        <%= @course.number_of_levels %>
+    </li>
+    <li>
+          <strong>Category:</strong>
+          <%= @course.category %>
+    </li>
+    <li>
+          <strong>Department:</strong>
+          <%= @course.department.name %>
+    </li>
+    <li>
+          <strong>School:</strong>
+          <%= @course.department.school %>
+    </li>
+  </ul>
+
+</fieldset>
+<!-- <%= link_to 'Timetables', timetables_course_path(@course) %>
+<%= link_to 'Edit', edit_department_course_path(@department,@course) %>
+<%= link_to 'Back', department_courses_path(@department) %> -->
+
+<table>
+  <thead>
+  <tr>
+    <th>Course Modules</th>
+  </tr>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+       <th>Level</th>
+      <th>Lecturer</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%@course.course_modules.each do |course_module| %>
+      <tr>
+        <td><%= course_module.code %></td>
+        <td><%= course_module.title %></td>
+        <td><%= course_module.level %></td>
+        <td><%= course_module.lecturer %></td>
+        <td><%= link_to 'Show |', course_module %>
+        <%= link_to 'Edit |', edit_course_module_path(course_module) %>
+        <%= link_to 'Destroy', course_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</section>

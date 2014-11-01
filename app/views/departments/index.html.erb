@@ -1,0 +1,41 @@
+<section class="small-10 columns">
+
+  <!-- <section id="form" class="small-12 small-centered columns">
+  <div class="row">
+    <div class="medium-8 medium-centered columns">
+      <%= image_tag("departments.png", :alt => "departments") %>
+    </div>
+  </div>
+  </section> -->
+  <h1>Departments</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <%= link_to 'Add Department', new_department_path %>
+        </th>
+      </tr>
+      <tr>
+        <th>Department</th>
+        <th>School</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @departments.each do |department| %>
+        <tr>
+          <td><%= department.name %></td>
+          <td><%= department.school %></td>
+          <td>
+            <%= link_to 'Add Course |', new_department_course_path(department) %>
+            <%= link_to 'Show Courses', department_courses_path(department) %> <br>
+            <%= link_to 'Show |', department %>
+            <%= link_to 'Edit |', edit_department_path(department) %>
+            <%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

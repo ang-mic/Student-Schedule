@@ -1,0 +1,25 @@
+<section class="small-12 columns">
+  <div id="calendar">
+    <h2 id="month">
+      <%= link_to("<", date: @date.prev_month) %>
+      <%= @date.strftime("%B %Y") %>
+      <%= link_to(">", date: @date.next_month) %>
+    </h2>
+    <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @events_by_date[date] %>
+    <ul>
+      <% @events_by_date[date].each do |event| %>
+      <li class= "events">
+        <div class="row" style= "background-color: <%= event.colour %>;">
+          <div class="left"> <%= link_to(event.title, user_event_path(event)) %></div>
+          <div class="right"> <%= link_to "#{image_tag("delete.png", :alt => "delete")}".html_safe, user_event_path(event), method: :delete %></div>
+        </div>
+      </li>
+      <%end%>
+    </ul>
+    <%end%>
+    <%end%>
+
+  </div>
+</section>

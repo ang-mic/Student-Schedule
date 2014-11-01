@@ -1,0 +1,10 @@
+<section id="form" class="small-7 small-centered columns">
+  <div class="medium-8 medium-centered columns">
+    <%= image_tag("new-course.png", :alt => "new-course") %>
+  </div>
+</section>
+
+<%= render 'form' %>
+
+<%= link_to 'All Departments', departments_path %>
+<%= link_to 'Department Courses', department_courses_path(@department) %>

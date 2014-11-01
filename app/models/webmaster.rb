@@ -1,0 +1,2 @@
+class Webmaster < Admin
+end

@@ -1,0 +1,34 @@
+<section class="small-10 columns">
+<h1><%= @department.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Add New Course', new_department_course_path(@department) %><br></th>
+    </tr>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Short title</th>
+      <th>Number of levels</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.code %></td>
+        <td><%= course.title %></td>
+        <td><%= course.short_title %></td>
+        <td><%= course.number_of_levels %></td>
+        <td><%= course.category %></td>
+        <td><%= link_to 'Show |', department_course_path(@department,course) %>
+        <%= link_to 'Edit |', edit_department_course_path(@department, course) %>
+        <%= link_to 'Destroy', department_course_path(@department, course), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</section>

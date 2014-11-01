@@ -1,0 +1,28 @@
+<section id="form" class="small-7 small-centered columns">
+
+  <%= form_for(@department) do |f| %>
+
+  <fieldset class="field">
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :name %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.text_field :name, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :school %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.text_field :school, label: false %>
+      </div>
+    </div>
+  </fieldset>
+    <div class="actions">
+      <%= f.submit(class: "button expand form") %>
+    </div>
+  <% end %>
+</section>

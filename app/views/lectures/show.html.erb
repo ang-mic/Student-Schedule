@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @lecture.course_module.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @lecture.location.address %>
+</p>
+<%= image_tag("http://maps.google.com/maps/api/staticmap?size=150x150&sensor=false&zoom=16&markers=#{@lecture.location.latitude}%2C#{@lecture.location.longitude}") %>
+<p>
+  <strong>Date:</strong>
+  <%= @lecture.date %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @lecture.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @lecture.end_at %>
+</p>
+
+<p>
+  <strong>Repeat type:</strong>
+  <%= @lecture.repeat_type %>
+</p>
+
+<p>
+  <strong>Repeat frequency:</strong>
+  <%= @lecture.repeat_frequency %>
+</p>
+<p>
+  <strong>Day:</strong>
+  <%= @lecture.day %>
+</p>
+<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<%= link_to 'Back', lectures_path %>

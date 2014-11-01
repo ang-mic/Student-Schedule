@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+    <th><h1><%= @course.title %> Timetables</h1></th>
+    </tr>
+    <tr>
+      <th>Course</th>
+      <th>Level</th>
+      <th>Term</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Academic year</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timetables.each do |timetable| %>
+    <tr>
+      <td><%= timetable.course.title %></td>
+      <td><%= timetable.level %></td>
+      <td><%= timetable.term %></td>
+      <td><%= timetable.format_start_date %></td>
+      <td><%= timetable.format_end_date %></td>
+      <td><%= timetable.academic_year %></td>
+      <td><%= link_to 'Show', timetable %>
+        <%= link_to 'Edit', edit_timetable_path(timetable) %>
+        <%= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Timetable', new_timetable_path %>

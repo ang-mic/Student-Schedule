@@ -1,0 +1,65 @@
+
+<section id="form" class="small-7 small-centered columns">
+    <fieldset class="field">
+    <%= form_for(@timetable) do |f| %>
+
+      <div class="row">
+        <div class="medium-3 columns">
+          <%= f.label :course_id %>
+        </div>
+        <div class="medium-9 columns">
+           <%= f.select(:course_id, @courses, {}, label: false, class:"expand_select") %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-3 columns">
+          <%= f.label :level %>
+        </div>
+        <div class="medium-9 columns">
+           <%= f.select(:level, 0..4, label: false) %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-3 columns">
+          <%= f.label :term %>
+        </div>
+        <div class="medium-9 columns">
+           <%= f.select(:term, 1..3, label: false) %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-3 columns">
+          <%= f.label :start_at %>
+        </div>
+        <div class="medium-9 columns">
+           <%= f.date_select(:start_at,{},label: false) %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-3 columns">
+          <%= f.label :end_at %>
+        </div>
+        <div class="medium-9 columns">
+           <%= f.date_select(:end_at,{},label: false) %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-3 columns">
+            <%= f.label :academic_year %>
+        </div>
+        <div class="medium-9 columns">
+           <%= f.select(:academic_year, @academic_years.each { |value| [value] },label: false) %>
+        </div>
+      </div>
+
+    <div class="actions">
+      <%= f.submit class: "button expand form" %>
+    </div>
+    <% end %>
+</fieldset>
+</section>

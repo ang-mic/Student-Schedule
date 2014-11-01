@@ -1,0 +1,30 @@
+<nav class="tab-bar" >
+	<!-- off-canvas activation button -->
+	<section class="left-small">
+		<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+	</section>
+	<!-- Logo/title -->
+	<section class="middle tab-bar-section">
+		<h1>Brunel University</h1>
+	</section> 
+
+	<section class="right">
+
+		<span data-tooltip class="tip-bottom" title="Today's events"><%= daily_events(current_student) %></span>
+
+		<span data-tooltip class="tip-bottom" title="New event">
+			<%= link_to "#{image_tag("new-event-link.svg", :alt => "new-event-link",class: "fast_access")}".html_safe, new_user_event_path,'data-no-turbolink' => true %>
+		</span>
+
+		<span data-tooltip class="tip-bottom" title="Calendar">
+		<%= link_to "#{image_tag("calendar-link.svg", :alt => "calendar-link",class: "fast_access")}".html_safe, user_events_path,'data-no-turbolink' => true %>
+		</span>
+
+		<span>|</span>
+
+		<% if student_signed_in? %>
+			<!-- If user is loged in -->
+			<%= link_to  current_student.full_name, student_path(current_student), class: "top-bar-link" %>
+		<% end %>
+	</section>              
+</nav>

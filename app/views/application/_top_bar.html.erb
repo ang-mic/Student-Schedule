@@ -1,0 +1,18 @@
+<!-- This is the top-navigation-bar -->
+<nav class="top-bar" data-topbar>
+	<section class="top-bar-section left">
+		<%= link_to 'Brunel University', "http://www.brunel.ac.uk/intranets",target: "_blank",class: "title" %>
+	</section>
+	<!-- Right section of the top-bar -->
+	<!-- <section class="top-bar-section right">
+		<% if student_signed_in? %>
+
+		Logged in as <strong><%= current_student.first_name %></strong> |
+		<%= link_to 'Edit profile', edit_student_registration_path%> |
+		<%= link_to "Logout", destroy_student_session_path, method: :delete  %>
+		<% else %>
+
+		<%= link_to "Login", new_student_session_path  %>
+		<% end %>
+	</section> -->
+</nav>

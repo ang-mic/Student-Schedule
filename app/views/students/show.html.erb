@@ -1,0 +1,40 @@
+
+<section  class="small-5 small-centered columns">
+  <p id="notice"><%= notice %></p>
+
+
+  <fieldset>
+    <legend >
+      <%= image_tag(@student.profile_picture.url(:small),class: "profile-picture-rounded") %>
+      <%= @student.full_name %>
+    </legend>
+
+    <fieldset>
+      <legend>e-mail</legend>
+      <div class="medium-9 columns">
+        <%= @student.email %>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Student Number</legend>
+      <div class="medium-9 columns">
+        <%= @student.student_number %>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Course</legend>
+      <div class="medium-9 columns">
+       <%= @student.course.title %>
+     </div>
+   </fieldset>
+
+   <fieldset>
+    <legend>Date of Birth</legend>
+    <div class="medium-9 columns">
+      <%= @student.date_of_birth.strftime("%d %B %Y") %>
+    </div>
+  </fieldset>
+</fieldset>
+</section>

@@ -1,0 +1,11 @@
+<aside class="small-2 columns"> 
+	<nav id="navigation">
+		<ul>
+			<li><%= link_to_unless_current 'Home', '#' %></li>				
+			<li><%= link_to_unless_current 'Calendar', '#' %></li>
+			
+			<li><%= link_to_unless_current 'My Course', courses_path %></li>				
+			<li><%= link_to_unless_current 'Profile', timetables_path %></li>
+		</ul>
+	</nav>
+</aside>

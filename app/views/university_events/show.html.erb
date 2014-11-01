@@ -1,0 +1,30 @@
+<section class="small-10 columns">
+
+  <fieldset>
+    <legend><h3>Lecture Description</h3></legend>
+    <ul>
+      <li>
+          <strong>Course Module:</strong>
+          <%= @university_event.course_module.title %>
+      </li>
+      <li>
+          <strong>Room:</strong>
+          <%= @university_event.room %>
+      </li>
+      <li>
+          <strong>Lecturer:</strong>
+          <%= @university_event.course_module.lecturer %>
+      </li>
+      <li>
+          <strong>Start at:</strong>
+          <%= @university_event.start_at.strftime("%H:%M") %>
+      </li>
+      <li>
+          <strong>End at:</strong>
+          <%= @university_event.end_at.strftime("%H:%M") %>
+      </li>
+    </ul>
+
+  </fieldset>
+  <%= link_to 'Back to Timetable', timetable_path(@timetable) %>
+</section>

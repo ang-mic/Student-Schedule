@@ -1,0 +1,2 @@
+class Lecture < UniversityEvent
+end

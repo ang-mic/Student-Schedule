@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @lab.course_module.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @lab.location.address %>
+</p>
+<%= image_tag("http://maps.google.com/maps/api/staticmap?size=150x150&sensor=false&zoom=16&markers=#{@lab.location.latitude}%2C#{@lab.location.longitude}") %>
+<p>
+  <strong>Date:</strong>
+  <%= @lab.date %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @lab.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @lab.end_at %>
+</p>
+
+<p>
+  <strong>Repeat type:</strong>
+  <%= @lab.repeat_type %>
+</p>
+
+<p>
+  <strong>Repeat frequency:</strong>
+  <%= @lab.repeat_frequency %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @lab.group %>
+</p>
+
+<%= link_to 'Edit', edit_lab_path(@lab) %> |
+<%= link_to 'Back', labs_path %>

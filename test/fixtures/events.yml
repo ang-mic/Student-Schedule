@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2014-02-26
+  start_at: 2014-02-26 14:07:22
+  end_at: 2014-02-26 14:07:22
+  repeat_type: MyString
+  repeat_frequency: 
+  description: MyText
+
+two:
+  title: MyString
+  date: 2014-02-26
+  start_at: 2014-02-26 14:07:22
+  end_at: 2014-02-26 14:07:22
+  repeat_type: MyString
+  repeat_frequency: 
+  description: MyText

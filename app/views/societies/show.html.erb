@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @society.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @society.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @society.category %>
+</p>
+
+<p>
+  <strong>Descritpion:</strong>
+  <%= @society.descritpion %>
+</p>
+
+<%= link_to 'Edit', edit_society_path(@society) %> |
+<%= link_to 'Back', societies_path %>

@@ -1,0 +1,57 @@
+<section id="form" class="small-7 small-centered columns">
+<%= form_for(@course_module) do |f| %>
+
+<fieldset class="field">
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :title %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.text_field :title, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :code %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.text_field :code, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :level %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.select(:level, 0..4, label: false) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :lecturer %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.text_field :lecturer, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :course_id %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.select(:course_id, @courses, {}, label: false,class:"expand_select") %>
+    </div>
+  </div>
+
+</fieldset>
+
+<div class="actions">
+  <%= f.submit class:"button expand form" %>
+</div>
+<% end %>
+</section>

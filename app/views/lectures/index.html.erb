@@ -1,0 +1,37 @@
+<h1>All Lectures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Module</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Repeat type</th>
+      <th>Repeat frequency</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lectures.each do |lecture| %>
+    <tr>
+      <td><%= lecture.day %></td>    
+      <td><%= lecture.course_module.title %></td>
+      <td><%= lecture.format_start_time %></td>
+      <td><%= lecture.format_end_time %></td>
+      <td><%= lecture.duration %></td>
+      <td><%= lecture.repeat_type %></td>
+      <td><%= lecture.repeat_frequency %></td>
+        <td>
+          <%= link_to 'Show', lecture %>
+          <%= link_to 'Edit', edit_lecture_path(lecture) %>
+          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Lecture', new_lecture_path %>

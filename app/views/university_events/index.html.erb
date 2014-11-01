@@ -1,0 +1,41 @@
+<h1><%= @timetable.course.title + " Lvl"+@timetable.level.to_s %> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Module</th>
+      <th>Day</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Duration</th>
+      <th>Repeat type</th>
+      <th>Repeat frequency</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @university_events.each do |university_event| %>
+    <tr>
+      <td><%= university_event.type %></td>
+      <td><%= university_event.course_module.title %></td>
+      <td><%= university_event.day %></td>
+      <td><%= university_event.format_start_time %></td>
+      <td><%= university_event.format_end_time %></td>
+      <td><%= university_event.duration %></td>
+      <td><%= university_event.repeat_type %></td>
+      <td><%= university_event.repeat_frequency %></td>
+      <td>
+        <%= link_to 'Show', university_event %>
+        <%= link_to 'Edit', edit_timetable_university_event_path(@timetable,university_event) %>
+        <%= link_to 'Destroy', university_event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New University event', new_timetable_university_event_path(@timetable) %>

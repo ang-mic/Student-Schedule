@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @department.name %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @department.school %>
+</p>
+<p>
+  <strong>Number of Courses:</strong>
+  <%= @department.courses.size %>
+</p>
+
+<%= link_to 'Edit', edit_department_path(@department) %> <br>
+<%= link_to 'Add New Course', new_department_course_path(@department) %><br>
+<%= link_to 'Department Courses', department_courses_path(@department) %> <br>
+<%= link_to 'All Departments', departments_path %>

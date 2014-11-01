@@ -1,0 +1,66 @@
+<section id="form" class="small-7 small-centered columns">
+<%= form_for([@department, @course]) do |f| %>
+
+  <fieldset class="field">
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :title %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.text_field :title, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :short_title %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.text_field :short_title, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :code %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.text_field :code, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-4 columns">
+        <%= f.label :number_of_levels %>
+      </div>
+      <div class="medium-8 columns">
+          <%= f.select(:number_of_levels, 1..4, label: false) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :category %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.select(:category, [["Foundation"],["BEng"],["MEng"],["MSc"]], label: false) %>
+      </div>
+    </div>
+</fieldset>
+
+<fieldset>
+  <legend><h3>Add Modules</h3></legend>
+
+  <!-- This piece of code is used to enter the location of the event-->
+  <%= f.fields_for :course_modules do |builder| %>
+   <%= render 'course_module_fields', :f => builder %>
+  <% end %>
+
+    <%= link_to_add_fields("Add Module", f, :course_modules) %>
+</fieldset>
+  <div class="actions">
+    <%= f.submit class: "button expand form"%>
+  </div>
+<% end %>
+
+</section>

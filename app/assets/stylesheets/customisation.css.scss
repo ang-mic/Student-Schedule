@@ -1,0 +1,346 @@
+// import Open-San
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body,html{
+    font-family: 'Open Sans', sans-serif;
+    height:100%;
+    font-size: 15px;
+
+    textarea {
+      resize: none;
+    }
+
+    .small-icon{
+      width: 25px;
+      height: 25px;
+    }
+}
+
+/*.off-canvas-wrap,.inner-wrap{
+    height:100%;
+}*/
+
+/*-------------------------Top-bar-----------------------*/
+.top-bar-section {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.top-bar-link{
+  color: #000;
+  font-weight: bold;
+  margin-right: 1rem;
+
+  &:hover{
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+.tab-bar-section.middle {
+  width: 300px;
+
+  h1{
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.title{
+  color: #000;
+  font-size: 2rem;
+
+  &:hover{
+    color: #000;
+  }
+}
+
+#admin-nav{
+  background: #fff;
+
+  border-top: solid 1px #ddd;
+
+
+
+  a{
+    background: #fff;
+    &:hover{
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.fast_access{
+  width: 25px;
+  height: 25px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+
+  font-size: 25px;
+
+  &:hover{
+    opacity: 1;
+  }
+}
+/*-------------------------------------------------------*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  // font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+ /*border-bottom: 1px solid #ccc;*/
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #f6f6f6;
+  display: block;
+  width: 200px;
+
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition:  background-color 0.3s ease;
+  -o-transition:  background-color 0.3s ease;
+  -ms-transition:  background-color 0.3s ease;
+  transition:  background-color 0.3s ease;
+}
+
+/*-----------------Off-canvas menu styling----------------*/
+
+.inner-wrap{
+  height: 100%;
+}
+
+.off-canvas-lable{
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Pacifico', cursive;
+}
+ #off-canvas-link a:hover{
+  // background: #d92020;
+  background: #ddd;
+}
+
+ #off-canvas-logout a:hover{
+  background: #DA4747;
+}
+
+/*-------------------------------------------------------*/
+
+/*-----------------side-nav----------------*/
+
+.side-nav{
+  border-right:1px solid #ddd;
+
+
+  li:hover{
+    text-decoration: underline;
+  }
+}
+
+/*-------------------------------------------------------*/
+
+/*------------------Buttons stylings--------------------*/
+.button{
+  font-weight: 100 !important;
+}
+
+.button.small{
+  font-size: 1rem;
+}
+
+.button.signIn{
+  background-color: #43ac6a;
+  border-color: #368a55;
+  color: white;
+  width: 100%;
+  font-size: 1.2rem;
+
+  -webkit-transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+}
+.button.signIn:hover{
+  background-color: #358854;
+}
+
+.button.register{
+  background-color: #fbd955;
+  width: 100%;
+}
+.button.register:hover{
+  background-color: #f9c80a;
+}
+
+.button.update{
+  background-color: #fbd955;
+  width: 50%;
+}
+.button.update:hover{
+  background-color: #f9c80a;
+}
+
+
+.button.deactivate{
+  background-color: #999;
+}
+
+.button.deactivate:hover{
+  background-color: #d92020;
+}
+
+.button.form{
+  background-color: #fbd955;
+  font-size: 1.5rem;
+}
+
+.button.form:hover{
+  background-color: #f9c80a;
+}
+/*------------------------------------------------------*/
+
+/*-------------------Inputs styling----------------------*/
+input.loginField{
+  height: 3rem;
+  /*font-weight: lighter;*/
+  font-size: 1.2rem;
+  text-align: center;
+}
+/*-------------------------------------------------------*/
+
+/*-------------------Headers styling----------------------*/
+h2.sign-up{
+  font-size: 3.3125rem;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: -2%;
+}
+
+h2.edit{
+  font-size: 3.3125rem;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 10%;
+
+}
+/*-------------------------------------------------------*/
+
+/*-------------------Labels styling----------------------*/
+.loginLabel{
+   font-size: 30px;
+   text-align: center;
+}
+
+/*------------------------------------------------------*/
+
+
+/*-------------------Notifications styling----------------------*/
+
+/*error*/
+section #error_notification{
+  text-align: center;
+  font-weight: lighter;
+  background:#DA4747;
+  color:#FAFAFA;
+  border:1px solid #c62828;
+  padding: 3px;
+  border-radius: 3px;
+/*  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);*/
+}
+
+section #alert_notification{
+  text-align: center;
+  font-weight: lighter;
+  border:none;
+  background:#E6CA5C;
+  border-radius: 3px;
+  color:#FAFAFA;
+  padding: 3px;
+  border:1px solid #dfbc30;
+  /*-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);*/
+}
+
+div #error_explanation{
+  text-align: center;
+  font-weight: lighter;
+  background:#DA4747;
+  color:#FAFAFA;
+  /*border:1px solid #c62828;*/
+  padding: 0px;
+  border-radius: 3px;
+  margin-top: -3%;
+}
+
+#error_explanation h2{
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: -3%;
+}
+
+#error_explanation ul{
+  text-align: left;
+}
+/*------------------------------------------------------*/
+
+/*---------------------Forms-----------------------------*/
+#form{
+  padding: 20px;
+}
+
+#form select {
+    width:100px;
+}
+
+#form .expand_select {
+    width:100%;
+}
+
+#register-form{
+  position: absolute;
+  left: 32%;
+  top: 15%;
+}
+
+small.input-text{
+  background-color: #DA4747;
+}
+/*------------------------------------------------------*/
+
+/*---------------------login section--------------------*/
+#sign-in-section{
+  position: absolute;
+  left: 32%;
+  top: 25%;
+}
+#sign-in-section h4{
+  text-align: center;
+  font-weight: lighter;
+}
+/*------------------------------------------------------*/
+
+.profile-picture-rounded{
+  // border:1px solid #000;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}

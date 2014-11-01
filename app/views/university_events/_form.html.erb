@@ -1,0 +1,104 @@
+<section id="form" class="small-7 small-centered columns">
+<%= form_for([@timetable, @university_event]) do |f| %>
+
+<fieldset class="field">
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :course_module_id %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.select(:course_module_id, @course_modules, {}, label: false,class:"expand_select") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :room %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.text_field :room, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :type %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.select(:type, [["Lecture"],["Lab"]], label: false) %>
+    </div>
+  </div>
+
+  <fieldset class="field">
+    <legend>Date & Time</legend>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :day %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.select(:day, [["monday"],["tuesday"],["wednesday"],["thursday"],["friday"],["saturday"],["sunday"]], label: false) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :date%>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.text_field :date, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :start_at %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.time_select(:start_at, {:class => "time_picker"}, label: false) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :end_at %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.time_select :end_at, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :repeat_type %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.select(:repeat_type, [["none"],["Daily"],["Weekly"],["Monthly"]], label: false) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :repeat_frequency %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.select( :repeat_frequency, 1..31, label: false) %>
+      </div>
+    </div>
+  </fieldset>
+
+<!-- This piece of code is used to input the location of the event-->
+<%= f.fields_for :location do |location_builder| %>
+<div class="field">
+  <!-- <%= location_builder.label :address %><bpr> -->
+  <%= location_builder.hidden_field :address, :value => "Brunel University" %>
+</div>
+<% end %>
+
+
+
+<div class="actions">
+  <%= f.submit class: "button expand form" %>
+</div>
+<% end %>
+</section>

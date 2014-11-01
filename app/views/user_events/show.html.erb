@@ -1,0 +1,32 @@
+<section class="small-7 small-centered columns">
+
+  <h2><%= @user_event.title %></h2>
+
+  <%= image_tag("http://maps.google.com/maps/api/staticmap?size=700x200&sensor=false&zoom=16&markers=#{@user_event.location.latitude}%2C#{@user_event.location.longitude}") %>
+  <ul>
+    <li>
+        <strong>Place:</strong>
+        <%= @user_event.location.address %>
+    </li>
+    <li>
+        <strong>Date:</strong>
+        <%= @user_event.date.strftime("%d-%B-%Y") %>
+    </li>
+    <li>
+        <strong>Start at:</strong>
+        <%= @user_event.start_at.strftime("%H:%M") %>
+    </li>
+    <li>
+        <strong>End at:</strong>
+        <%= @user_event.end_at.strftime("%H:%M") %>
+    </li>
+    <li>
+        <strong>Description:</strong>
+        <p class="text-justify"  style="width:90%; word-wrap:break-word;">
+          <%= @user_event.description %>
+        </p>
+    </li>
+  </ul>
+
+<%= link_to 'Edit', edit_user_event_path(@user_event) %>
+</section>

@@ -1,0 +1,40 @@
+<h1>All Labs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Module</th>
+      <th>Date</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Repeat type</th>
+      <th>Repeat frequency</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @labs.each do |lab| %>
+    <tr>
+      <td><%= lab.day %></td>
+      <td><%= lab.course_module.title %></td>
+      <td><%= lab.format_start_time %></td>
+      <td><%= lab.format_end_time %></td>
+      <td><%= lab.duration %></td>
+      <td><%= lab.repeat_type %></td>
+      <td><%= lab.repeat_frequency %></td>
+      <td><%= lab.group %></td>
+      <td>
+        <%= link_to 'Show', lab %>
+        <%= link_to 'Edit', edit_lab_path(lab) %>
+        <%= link_to 'Destroy', lab, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lab', new_lab_path %>

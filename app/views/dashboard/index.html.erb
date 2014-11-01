@@ -1,0 +1,9 @@
+<!-- today's events -->
+<%= render 'today' %>
+<!-- today's events -->
+<!-- <%= render 'upcoming' %> -->
+<p>
+  <%= current_student.course.timetables[0].course.title %>
+  <br>
+  <%= link_to "Timetable", timetables_path %>
+</p>

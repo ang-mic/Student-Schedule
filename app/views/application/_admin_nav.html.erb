@@ -1,0 +1,17 @@
+<nav class="top-bar" data-topbar id="admin-nav">
+
+  <section class="top-bar-section">
+
+    <!-- Left Nav Section -->
+    <ul class="center">
+
+					<li><%= link_to_unless_current 'Departments', departments_path %></li>
+					<li><%= link_to_unless_current 'Courses', courses_path %></li>
+					<li><%= link_to_unless_current 'Course Modules', course_modules_path %></li>
+					<li><%= link_to_unless_current 'Timetables', timetables_path %></li>
+					<!-- <li><%= link_to_unless_current 'Students', students_path %></li>
+					<li><%= link_to_unless_current 'Societies', societies_path %></li> -->
+					<li><%= link_to 'Logout', :controller => :access,:action => 'logout' %></li>
+    </ul>
+  </section>
+</nav>

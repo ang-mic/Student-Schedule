@@ -1,0 +1,47 @@
+<section class="small-12 columns">
+<!--
+<h1>Timetables</h1><br> -->
+
+<% if !current_student %>
+  <%= link_to 'New Timetable', new_timetable_path %>
+<% end %>
+
+<table id="timetable-index">
+  <!-- <thead>
+    <tr>
+      <th>Term</th>
+      <th>Course</th>
+      <th>Level</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Academic year</th>
+      <th>Actions</th>
+    </tr>
+  </thead> -->
+
+  <tbody>
+    <% @timetables.each do |timetable| %>
+      <tr>
+        <td id="term-cell">Term <%= timetable.term %></td>
+        <td id="course-cell"><%= timetable.course.title %></td>
+        <td id="level-cell">L <%= timetable.level %></td>
+        <!-- <td><%= timetable.format_start_date %></td>
+        <td><%= timetable.format_end_date %></td>
+        <td><%= timetable.academic_year %></td> -->
+        <td id="level-action">
+
+        <% if current_student %>
+          <%= link_to 'Show', timetable %>
+        <% else %>
+          <%= link_to '| Add Lecture/Lab', new_timetable_university_event_path(timetable) %><br>
+          <%= link_to 'Edit |', edit_timetable_path(timetable) %>
+          <%= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%end%>
+
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</section>

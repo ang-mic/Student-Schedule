@@ -1,0 +1,854 @@
+
+<table id="timetable">
+  <thead>
+    <% first_hour = Time.now.utc.beginning_of_day + 8.hours %>
+    <% last_hour = Time.now.utc.beginning_of_day + 20.hours %>
+    <% hours=(first_hour.hour..last_hour.hour) %>
+
+    <th>Day</th>
+      <% hours.each do |h| %>
+        <th><%= h %>:00</th>
+    <% end %>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Mon</td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 08:00:00.000000".."2000-01-01 08:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 09:00:00.000000".."2000-01-01 9:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+       <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 10:00:00.000000".."2000-01-01 10:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 11:00:00.000000".."2000-01-01 11:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 12:00:00.000000".."2000-01-01 12:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 13:00:00.000000".."2000-01-01 13:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 14:00:00.000000".."2000-01-01 14:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 15:00:00.000000".."2000-01-01 15:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 16:00:00.000000".."2000-01-01 16:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 17:00:00.000000".."2000-01-01 17:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 18:00:00.000000".."2000-01-01 18:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 19:00:00.000000".."2000-01-01 19:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "monday").where(:start_at => "2000-01-01 20:00:00.000000".."2000-01-01 20:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+    </tr>
+    <tr>
+      <td>Tue</td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 08:00:00.000000".."2000-01-01 08:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 09:00:00.000000".."2000-01-01 9:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+       <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 10:00:00.000000".."2000-01-01 10:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 11:00:00.000000".."2000-01-01 11:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 12:00:00.000000".."2000-01-01 12:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 13:00:00.000000".."2000-01-01 13:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 14:00:00.000000".."2000-01-01 14:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 15:00:00.000000".."2000-01-01 15:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 16:00:00.000000".."2000-01-01 16:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 17:00:00.000000".."2000-01-01 17:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 18:00:00.000000".."2000-01-01 18:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 19:00:00.000000".."2000-01-01 19:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "tuesday").where(:start_at => "2000-01-01 20:00:00.000000".."2000-01-01 20:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+    </tr>
+    <tr>
+      <td>Wed</td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 08:00:00.000000".."2000-01-01 08:59:59.000000").each do |university_event| %>
+        <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 09:00:00.000000".."2000-01-01 9:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+       <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 10:00:00.000000".."2000-01-01 10:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 11:00:00.000000".."2000-01-01 11:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 12:00:00.000000".."2000-01-01 12:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 13:00:00.000000".."2000-01-01 13:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 14:00:00.000000".."2000-01-01 14:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 15:00:00.000000".."2000-01-01 15:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 16:00:00.000000".."2000-01-01 16:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 17:00:00.000000".."2000-01-01 17:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 18:00:00.000000".."2000-01-01 18:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 19:00:00.000000".."2000-01-01 19:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "wednesday").where(:start_at => "2000-01-01 20:00:00.000000".."2000-01-01 20:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+    </tr>
+    <tr>
+      <td>Thu</td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 08:00:00.000000".."2000-01-01 08:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 09:00:00.000000".."2000-01-01 9:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+         <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 10:00:00.000000".."2000-01-01 10:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 11:00:00.000000".."2000-01-01 11:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 12:00:00.000000".."2000-01-01 12:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 13:00:00.000000".."2000-01-01 13:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 14:00:00.000000".."2000-01-01 14:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 15:00:00.000000".."2000-01-01 15:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 16:00:00.000000".."2000-01-01 16:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 17:00:00.000000".."2000-01-01 17:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 18:00:00.000000".."2000-01-01 18:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 19:00:00.000000".."2000-01-01 19:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+        <td>
+          <% @university_events.where(:day => "thursday").where(:start_at => "2000-01-01 20:00:00.000000".."2000-01-01 20:59:59.000000").each do |university_event| %>
+            <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+            <br>
+            <strong><%= university_event.room %></strong>
+            <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+            <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+          <%end%>
+        </td>
+    </tr>
+    <tr>
+      <td>Fri</td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 08:00:00.000000".."2000-01-01 08:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 09:00:00.000000".."2000-01-01 9:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+       <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 10:00:00.000000".."2000-01-01 10:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 11:00:00.000000".."2000-01-01 11:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 12:00:00.000000".."2000-01-01 12:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 13:00:00.000000".."2000-01-01 13:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 14:00:00.000000".."2000-01-01 14:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 15:00:00.000000".."2000-01-01 15:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 16:00:00.000000".."2000-01-01 16:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 17:00:00.000000".."2000-01-01 17:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 18:00:00.000000".."2000-01-01 18:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 19:00:00.000000".."2000-01-01 19:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "friday").where(:start_at => "2000-01-01 20:00:00.000000".."2000-01-01 20:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+    </tr>
+    <tr>
+      <td>Sat</td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 08:00:00.000000".."2000-01-01 08:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 09:00:00.000000".."2000-01-01 9:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+       <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 10:00:00.000000".."2000-01-01 10:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 11:00:00.000000".."2000-01-01 11:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 12:00:00.000000".."2000-01-01 12:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 13:00:00.000000".."2000-01-01 13:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 14:00:00.000000".."2000-01-01 14:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 15:00:00.000000".."2000-01-01 15:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 16:00:00.000000".."2000-01-01 16:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 17:00:00.000000".."2000-01-01 17:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 18:00:00.000000".."2000-01-01 18:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 19:00:00.000000".."2000-01-01 19:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "saturday").where(:start_at => "2000-01-01 20:00:00.000000".."2000-01-01 20:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+    </tr>
+    <tr>
+      <td>Sun</td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 08:00:00.000000".."2000-01-01 08:59:59.000000").each do |university_event| %>
+        <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 09:00:00.000000".."2000-01-01 9:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+       <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 10:00:00.000000".."2000-01-01 10:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 11:00:00.000000".."2000-01-01 11:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 12:00:00.000000".."2000-01-01 12:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 13:00:00.000000".."2000-01-01 13:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 14:00:00.000000".."2000-01-01 14:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 15:00:00.000000".."2000-01-01 15:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 16:00:00.000000".."2000-01-01 16:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 17:00:00.000000".."2000-01-01 17:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 18:00:00.000000".."2000-01-01 18:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 19:00:00.000000".."2000-01-01 19:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+      <td>
+        <% @university_events.where(:day => "sunday").where(:start_at => "2000-01-01 20:00:00.000000".."2000-01-01 20:59:59.000000").each do |university_event| %>
+          <%= link_to(university_event.course_module.title, timetable_university_event_path(@timetable,university_event.id)) %>
+          <br>
+          <strong><%= university_event.room %></strong>
+          <br><strong><%= university_event.start_at.strftime("%H:%M")%> -</strong>
+          <strong><%= university_event.end_at.strftime("%H:%M")%></strong>
+        <%end%>
+      </td>
+    </tr>
+  </tbody>
+</table>

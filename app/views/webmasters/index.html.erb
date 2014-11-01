@@ -1,0 +1,42 @@
+
+<fieldset>
+  <div><%= link_to_unless_current 'Departments', departments_path %></div>
+  <div><%= link_to_unless_current 'Courses', courses_path %></div>
+  <div><%= link_to_unless_current 'Course Modules', course_modules_path %></div>
+  <div><%= link_to_unless_current 'Timetables', timetables_path %></div>
+  <div><%= link_to_unless_current 'Students', students_path %></div>
+  <div><%= link_to_unless_current 'Societies', societies_path %></div>
+</fieldset>
+<!-- <h1>Listing webmasters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @webmasters.each do |webmaster| %>
+      <tr>
+        <td><%= webmaster.username %></td>
+        <td><%= webmaster.first_name %></td>
+        <td><%= webmaster.last_name %></td>
+        <td><%= link_to 'Show', webmaster %></td>
+        <td><%= link_to 'Edit', edit_webmaster_path(webmaster) %></td>
+        <td><%= link_to 'Destroy', webmaster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Webmaster', new_webmaster_path %>
+ -->

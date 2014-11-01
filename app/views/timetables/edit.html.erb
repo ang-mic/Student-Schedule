@@ -1,0 +1,47 @@
+
+<section id="form" class="small-7 small-centered columns">
+  <div class="medium-8 medium-centered columns">
+    <%= image_tag("edit-timetable.png", :alt => "edit-timetable") %>
+  </div>
+</section>
+<%= render 'form' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Module</th>
+      <th>Type</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Duration</th>
+      <th>Repeat type</th>
+      <th>Repeat frequency</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timetable.university_events.each do |university_event| %>
+    <tr>
+      <td><%= university_event.day %></td>
+      <td><%= university_event.course_module.title %></td>
+      <td><%= university_event.type %></td>
+      <td><%= university_event.format_start_time %></td>
+      <td><%= university_event.format_end_time %></td>
+      <td><%= university_event.duration %></td>
+      <td><%= university_event.repeat_type %></td>
+      <td><%= university_event.repeat_frequency %></td>
+      <td>
+        <%= link_to 'Show', timetable_university_event_path(@timetable,university_event.id) %>
+
+        <%= link_to 'Edit', edit_timetable_university_event_path(@timetable,university_event) %>
+
+        <%= link_to 'Destroy', university_event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add Lecture/Lab', new_timetable_university_event_path(@timetable) %><br>
+<%= link_to 'Back', timetables_path %>

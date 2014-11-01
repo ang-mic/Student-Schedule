@@ -1,0 +1,138 @@
+
+<section  id="edit-form" class="small-5 small-centered columns">
+  <div class="medium-9 medium-centered columns">
+    <%= image_tag("edit-profile.png", :alt => "edit-profile") %>
+    <!-- <%= resource_name.to_s.humanize %> -->
+    </div>
+
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put},:html => {:multipart => true}) do |f| %>
+
+  <fieldset>
+    <legend>e-mail & Password</legend>
+    <div class="row">
+      <div class="medium-2 columns">
+        <%= f.label :email %>
+      </div>
+      <div class="medium-10 columns"> 
+        <%= f.email_field :email, :autofocus => true, label: false %>
+      </div>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    
+    <div class="row">
+      <div class="medium-2 columns">
+        <%= f.label :password %>
+      </div>
+      <div class="medium-10 columns"> 
+        <i>(leave blank if you don't want to change password)</i><br />
+        <%= f.password_field :password, :autocomplete => "off",label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-2 columns">
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="medium-10 columns"> 
+        <%= f.password_field :password_confirmation, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-2 columns">
+        <%= f.label :current_password %>
+      </div>
+      <div class="medium-10 columns"> 
+        <%= f.password_field :current_password, label: false %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Name</legend>
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :first_name %>
+      </div>
+      <div class="medium-9 columns"> 
+        <%= f.text_field :first_name, label: false %>
+      </div>
+    </div>  
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :last_name %>
+      </div>
+      <div class="medium-9 columns"> 
+        <%= f.text_field :last_name, label: false %>
+      </div>
+    </div>  
+  </fieldset>
+
+  <fieldset>
+    <legend>Profile Picture</legend>
+    <div class="row">
+      <div class="medium-12 columns"> 
+        <%= f.file_field :profile_picture, label: false %>
+      </div>
+    </div>  
+  </fieldset>
+  
+  <fieldset>
+    <legend>University</legend>
+    <div class="row">
+      <div class="medium-4 columns">
+        <%= f.label :student_number, label: false %>
+      </div>
+      <div class="medium-8 columns"> 
+        <%= f.text_field :student_number, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-4 columns">
+        <%= f.label :course_id %>
+      </div>
+      <div class="medium-8 columns"> 
+        <%= f.select(:course_id, Course.all.collect{|c| [c.title, c.id]}, label: false) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-4 columns">
+        <%= f.label :level %>
+      </div>
+      <div class="medium-8 columns">  
+        <%= f.select(:level, 0..4, label: false) %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Date of Birth</legend>
+    <div class="row">
+      <div class="medium-8 columns">  
+        <%= f.date_select(:date_of_birth, label: false, start_year: 1920) %>
+      </div>
+    </div>
+  </fieldset>
+
+  <%= f.submit "Update", class: 'button signIn' %>
+  <% end %>
+
+  <hr>
+  
+  <fieldset style="text-align: center;" >
+    <legend style="color: #DA4747;">Cancel Account</legend>
+
+    <p>
+      <%= image_tag("sad.svg", :alt => "sad", class: "small-icon") %>
+      Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure? We will miss you :(" }, :method => :delete, class: " button deactivate" %>
+    </p>
+
+  </fieldset>
+</section>
+

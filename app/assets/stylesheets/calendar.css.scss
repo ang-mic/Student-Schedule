@@ -1,0 +1,95 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#calendar .calendar {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+  td, th {
+    font-size: 11px;
+    padding: 6px;
+    border: 1px solid #fff;
+  }
+
+  th {
+    font-weight: 100;
+    font-size: 17px;
+    /*background: #008cba;*/
+    background: #000;
+    color: #fff;
+    text-align: center;
+    width: 14.2857142857143%;
+    font-family: 'Pacifico', cursive;
+  }
+
+  td {
+    background: #FFF;
+    color: #777;
+    height: 100px;
+    vertical-align: top;
+    font-size: 15px;
+  }
+
+  .notmonth, .notmonth a { color: #CCC; }
+  .notmonth { background: #f0f0f0; }
+  .today { background-color: #D7F2FF; }
+}
+
+#calendar #month {
+  margin: 0;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 100;
+  font-family: 'Pacifico', cursive;
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #999;
+    font-family: body;
+  }
+}
+
+// event styling 
+#calendar { 
+  ul {
+    padding-left: 13px;
+    padding-right: 13px;
+    
+    .events {
+      a{
+        color: #000;
+        display: inline;
+        font-size: 14px;
+        -webkit-transition: background-color 300ms ease-in;
+        -moz-transition: background-color 300ms ease-in;
+        transition: background-color 300ms ease-in;
+      }
+
+      &:hover .right{
+        /*visibility: hidden;*/
+        visibility: visible;
+        opacity: 0.3;  
+      }
+
+      .right {
+        opacity: 0;
+        visibility: hidden;
+        padding-right: 5px; 
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover{
+          /*visibility: hidden;*/
+          visibility: visible;
+          opacity: 1;
+        }
+      }      
+    }
+  }
+}
+

@@ -1,0 +1,119 @@
+<section id="register-form" class="small-7 small-centered columns">
+	<div class="row">
+		<div class="medium-9 medium-centered columns">
+			<% if resource_class == Student %>
+			<%= image_tag("new-student.png", :alt => "student-logo") %>
+			<% elsif resource_class == Society %>
+			<%= image_tag("society-logo.png", :alt => "society-logo") %>
+			<% end %>
+		</div>
+	</div>
+
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
+	<fieldset>
+		<legend>e-mail & Password</legend>
+		<div class="row">
+			<div class="medium-2 columns">
+				<%= f.label :email %>
+			</div>
+			<div class="medium-10 columns"> 
+				<%= f.email_field :email, :autofocus => true, label: false %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="medium-2 columns">
+				<%= f.label :password %>
+			</div>
+			<div class="medium-10 columns"> 
+				<%= f.password_field :password, label: false %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="medium-2 columns">
+				<%= f.label :password_confirmation %>
+			</div>
+			<div class="medium-10 columns"> 
+				<%= f.password_field :password_confirmation, label: false %>
+			</div>
+		</div>
+	</fieldset>
+
+	<% if resource.class == Student %>
+	
+	<fieldset>
+		<legend>Name</legend>
+
+		<div class="row">
+			<div class="medium-3 columns">
+				<%= f.label :first_name %>
+			</div>
+			<div class="medium-9 columns"> 
+				<%= f.text_field :first_name, label: false %>
+			</div>
+		</div>  
+
+		<div class="row">
+			<div class="medium-3 columns">
+				<%= f.label :last_name %>
+			</div>
+			<div class="medium-9 columns"> 
+				<%= f.text_field :last_name, label: false %>
+			</div>
+		</div>  
+	</fieldset>
+
+	<fieldset>
+		<legend>Profile Picture</legend>
+		<div class="row">
+			<div class="medium-12 columns"> 
+				<%= f.file_field :profile_picture, label: false %>
+			</div>
+		</div>  
+	</fieldset>
+
+	<fieldset>
+		<legend>University</legend>
+		<div class="row">
+			<div class="medium-4 columns">
+				<%= f.label :student_number, label: false %>
+			</div>
+			<div class="medium-8 columns"> 
+				<%= f.text_field :student_number, label: false %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="medium-4 columns">
+				<%= f.label :course_id %>
+			</div>
+			<div class="medium-8 columns"> 
+				<%= f.select(:course_id, Course.all.collect{|c| [c.title, c.id]}, label: false) %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="medium-4 columns">
+				<%= f.label :level %>
+			</div>
+			<div class="medium-8 columns">  
+				<%= f.select(:level, 0..4, label: false) %>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Date of Birth</legend>
+		<div class="row">
+			<div class="medium-8 columns">  
+				<%= f.date_select(:date_of_birth, label: false, start_year: 1920) %>
+			</div>
+		</div>
+	</fieldset>
+
+	<% end %>
+	<%= f.submit "Sign up", class: "button register"  %>
+	<% end %>
+	<%= render("devise/shared/links") %>
+</section>

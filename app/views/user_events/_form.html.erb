@@ -1,0 +1,118 @@
+<section id="form" class="small-7 small-centered columns">
+
+  <%= form_for(@user_event) do |f| %>
+
+<fieldset class="field">
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :title %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.text_field :title, label: false %>
+    </div>
+  </div>
+
+  <!-- This piece of code is used to enter the location of the event-->
+
+  <%= f.fields_for :location do |location_builder| %>
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= location_builder.label :address %>
+    </div>
+    <div class="medium-9 columns">
+      <%= location_builder.text_field :address, label: false %>
+    </div>
+  </div>
+  <% end %>
+  </fieldset>
+
+  <fieldset class="field">
+    <legend>Date & Time</legend>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :date%>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.text_field :date, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :start_at %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.time_select(:start_at, {:class => "time_picker"}, label: false) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :end_at %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.time_select :end_at, label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :repeat_type %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.select(:repeat_type, [["none"],["Daily"],["Weekly"],["Monthly"]], label: false) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= f.label :repeat_frequency %>
+      </div>
+      <div class="medium-9 columns">
+        <%= f.select( :repeat_frequency, 1..31, label: false) %>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- <fieldset class="field">
+    <legend>Colour</legend>
+    <%= f.radio_button(:colour, "#5B6474") %>
+    <label style="background-color: #5B6474; width: 18px; height: 18px;"></label>
+    <%= f.radio_button(:colour, "#72B49B") %>
+    <label style="background-color: #72B49B; width: 18px; height: 18px;"></label>
+    <%= f.radio_button(:colour, "#A88367") %>
+    <label style="background-color: #A88367; width: 18px; height: 18px;"></label>
+  </fieldset>
+ -->
+<fieldset class="field">
+<legend>Colour</legend>
+      <%= f.hidden_field :colour, :value => "#5B6474" %>
+ </fieldset>
+
+  <!-- <fieldset class="field">
+    <legend>Privacy</legend>
+    <%= f.radio_button(:privacy, "private") %>
+    <%= f.radio_button(:privacy,"public")%>
+  </fieldset> -->
+
+
+  <fieldset class="field">
+    <legend>Privacy</legend>
+    <%= f.select(:privacy, [["private"],["public"]], label: false) %>
+  </fieldset>
+
+  <div class="row">
+    <div class="medium-3 columns">
+      <%= f.label :description %>
+    </div>
+    <div class="medium-9 columns">
+      <%= f.text_area :description, label: false %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit("Publish", class: "button expand form") %>
+  </div>
+  <% end %>
+</section>

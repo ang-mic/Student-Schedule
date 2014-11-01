@@ -1,0 +1,23 @@
+<section id="sign-in-section" class="small-4 small-centered columns">
+	<div class="row">
+		<div class="medium-9 medium-centered columns">
+			<% if resource_class == Student %>
+			<%= image_tag("student-logo.png", :alt => "student-logo") %>
+			<% elsif resource_class == Society %>
+			<%= image_tag("society-logo.png", :alt => "society-logo") %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-12 columns">
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<%= f.email_field(:email, :autofocus => true, placeholder:'e-mail', class: "loginField",label: false)%>
+			<%= f.password_field(:password, placeholder: 'password', class: "loginField",label: false)%>
+			<%= f.submit("Sign in", class: "button signIn") %>
+			<% end %>
+			<%= render "devise/shared/links" %><br>
+			<%= link_to('Member of Staff', cms_path)%>
+		</div>
+	</div>
+</section >
