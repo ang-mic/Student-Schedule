@@ -1,3 +1,13 @@
 == README
 
-This is a test application :)
+==== Web Based Application for Student Schedule 
+The scope of this project is the development of a web application, which aims to help students and particularly Freshers with 
+their organisation and time management by providing easy access to university timetables in addition to a system that allows 
+them to create their own personal schedules.
+
+The selected tools for the accomplishment of this web application are Ruby on Rails v 4.0 web framework with MySQL database 
+system for the server-side and the Foundation 5 framework for the front-end development.
+
+The developed web application allows students to create a personal profile and view their course timetable. Furthermore,
+it provides a calendar system that gives them the ability to plan their own schedule. Finally students and university’s
+societies can publish information, such as date, time and location for upcoming events.
